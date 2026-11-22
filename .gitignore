@@ -1,0 +1,12 @@
+.Rhistory
+.RData
+.Rproj.user/
+.quarto/
+*_cache/
+*_files/
+# Consider ignoring large or sensitive data and fit outputs:
+# data/*.rds
+# fits/
+
+/.quarto/
+**/*.quarto_ipynb
