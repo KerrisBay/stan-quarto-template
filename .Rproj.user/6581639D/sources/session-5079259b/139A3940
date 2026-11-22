@@ -1,0 +1,24 @@
+{
+    "id": "139A3940",
+    "path": "D:/workR/Blog/stan_quarto_template_simple/stan/model.stan",
+    "project_path": "stan/model.stan",
+    "type": "stan",
+    "hash": "1407469884",
+    "contents": "",
+    "dirty": false,
+    "created": 1795302473032.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1795291240,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1795291240,
+    "read_only": false,
+    "read_only_alternatives": []
+}

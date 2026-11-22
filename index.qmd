@@ -21,6 +21,14 @@ fit_prior <- readRDS(here("fits", "prior", "fit.rds"))
 fit <- readRDS(here("fits", "posterior", "fit.rds"))
 stan_data <- readRDS(here("data", "stan_data.rds"))
 metadata <- readRDS(here("fits", "metadata.rds"))
+
+draws <- as_draws_df(fit)
+
+draws_plot <- draws %>% 
+  slice_sample(n = 500)
+
+
+
 ```
 
 # Overview

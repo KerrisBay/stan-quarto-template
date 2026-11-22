@@ -1,12 +1,20 @@
-.Rhistory
-.RData
-.Rproj.user/
-.quarto/
-*_cache/
-*_files/
-# Consider ignoring large or sensitive data and fit outputs:
-# data/*.rds
-# fits/
 
 /.quarto/
 **/*.quarto_ipynb
+
+# Stan sampling output
+*.csv
+
+# R temporary files
+.Rhistory
+.RData
+
+# Quarto cache
+.quarto/
+
+# Temporary files
+*.tmp
+*.log
+
+# Sensitive data
+data/experimental/

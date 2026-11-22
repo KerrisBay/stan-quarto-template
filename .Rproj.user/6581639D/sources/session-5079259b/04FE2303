@@ -1,0 +1,26 @@
+{
+    "id": "04FE2303",
+    "path": "D:/workR/Blog/stan_quarto_template_simple/fit_model.R",
+    "project_path": "fit_model.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1795302468537.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "0,0",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1795337544,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1795337544,
+    "read_only": false,
+    "read_only_alternatives": []
+}

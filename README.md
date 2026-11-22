@@ -70,3 +70,7 @@ The fitting script saves each new RDS to a temporary file first and then replace
 
 - git status
 - git diff
+
+### Render website (gh-pages)
+
+- quarto publish gh-pages

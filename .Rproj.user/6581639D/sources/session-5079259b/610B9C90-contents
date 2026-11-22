@@ -1,0 +1,157 @@
+---
+title: "Bayesian model report"
+subtitle: "Quarto + CmdStanR"
+
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(here)
+library(posterior)
+library(bayesplot)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(knitr)
+
+# Reporting only: do not compile or sample here.
+fit_prior <- readRDS(here("fits", "prior", "fit.rds"))
+fit <- readRDS(here("fits", "posterior", "fit.rds"))
+stan_data <- readRDS(here("data", "stan_data.rds"))
+metadata <- readRDS(here("fits", "metadata.rds"))
+
+draws <- as_draws_df(fit)
+
+draws_plot <- draws %>% 
+  slice_sample(n = 500)
+
+
+
+```
+
+# Overview
+
+This report reads the latest saved prior and posterior fits. It does not compile the Stan model or launch sampling. To generate fresh draws, run `fit_model.R` deliberately.
+
+# Stan model
+
+The following is the exact Stan source copied to `fits/model.stan` by the most recent successful fitting-script execution.
+
+```{r}
+#| label: stan-source
+#| echo: false
+#| results: asis
+
+stan_source <- readLines(here("fits", "model.stan"), warn = FALSE)
+cat(
+  "```stan\n",
+  paste(stan_source, collapse = "\n"),
+  "\n```\n",
+  sep = ""
+)
+```
+
+# Data
+
+```{r}
+#| label: data-overview
+
+tibble(
+  quantity = c("Observations", "Predictor range", "Outcome range"),
+  value = c(
+    stan_data$N,
+    paste(range(stan_data$x), collapse = " to "),
+    paste(range(stan_data$y), collapse = " to ")
+  )
+) |>
+  knitr::kable()
+```
+
+# Prior predictive checks
+
+```{r}
+#| label: prior-predictive-plot
+#| fig-cap: "Prior predictive replicated outcomes."
+
+yrep_prior <- as_draws_matrix(fit_prior$draws("y_rep"))
+
+bayesplot::ppc_dens_overlay(
+  y = stan_data$y,
+  yrep = yrep_prior[
+    seq_len(min(50, nrow(yrep_prior))),
+    ,
+    drop = FALSE
+  ]
+)
+```
+
+# Posterior diagnostics
+
+## Parameter summaries
+
+```{r}
+#| label: posterior-summary
+
+fit$summary() |>
+  knitr::kable(digits = 3)
+```
+
+## Sampler diagnostics
+
+```{r}
+#| label: sampler-diagnostics
+
+fit$diagnostic_summary()
+```
+
+# Posterior predictive checks
+
+```{r}
+#| label: posterior-predictive-plot
+#| fig-cap: "Posterior predictive replicated outcomes."
+
+yrep_post <- as_draws_matrix(fit$draws("y_rep"))
+
+bayesplot::ppc_dens_overlay(
+  y = stan_data$y,
+  yrep = yrep_post[
+    seq_len(min(50, nrow(yrep_post))),
+    ,
+    drop = FALSE
+  ]
+)
+```
+
+# Provenance
+
+```{r}
+#| label: provenance
+
+provenance <- tibble(
+  item = c(
+    "Date", "Model SHA-256", "Data SHA-256",
+    "Prior seed", "Posterior seed",
+    "CmdStan", "CmdStanR", "R"
+  ),
+  value = c(
+    as.character(metadata$date),
+    metadata$model_sha256,
+    metadata$data_sha256,
+    metadata$seeds[["prior"]],
+    metadata$seeds[["posterior"]],
+    metadata$cmdstan_version,
+    metadata$cmdstanr_version,
+    metadata$R_version
+  )
+)
+
+knitr::kable(provenance)
+```
+
+# Interpretation
+
+Replace this section with your scientific interpretation, estimands, posterior contrasts, predictive checks, and limitations.
+
+# Hello again
