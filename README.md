@@ -51,9 +51,22 @@ The fitting script saves each new RDS to a temporary file first and then replace
 
 ## Git
 
-git init
-git add .
-git commit -m "Initial analysis"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-git push -u origin main
+### Initialization
+
+- git init
+- git add .
+- git commit -m "Initial analysis"
+- git branch -M main
+- git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+- git push -u origin main
+
+### Commit and push changes
+
+- git add .
+- git commit -m "Describe changes"
+- git push
+
+### Git status
+
+- git status
+- git diff
