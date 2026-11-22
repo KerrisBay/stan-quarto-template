@@ -10,16 +10,61 @@ website:
         text: Home
 date: today
 date-format: "D MMMM YYYY"
+
 format:
   html:
-    theme: cosmo
+    theme: yeti
     toc: true
-    toc-depth: 3
-    number-sections: true
+    toc-depth: 5
+    number-sections: false
+    fig-width: 15
+    fig-height: 9
+    fig-format: retina
+    mermaid-format: png
+    mermaid:
+      theme: neutral
     code-fold: true
-    code-tools: true
+    code-line-numbers: false
+    code-tools: 
+      source: true
+      toggle: false
+    code-link: true
+    code-block-bg: false
+    code-block-border-left: "#31BAE9"
+    highlight-style: arrow
     embed-resources: true
+  typst: 
+    fontsize: 11pt
+    keep-typ: false
+    toc: true
+    toc-depth: 5
+    fig-width: 17
+    fig-height: 10
+    code-annotations: false
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    papersize: a4
+    mermaid-format: png
+    margin:
+      x: 2cm
+      y: 1cm
+    columns: 1
+    geometry:
+      - top=0mm
+      - left=0mm
+      - right=0mm
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
 execute:
   echo: true
   warning: false
   message: false
+  freeze: false
+crossref:
+  fig-prefix: Obrázek   # (default is "Figure")
+  fig-title: Obrázek    # (default is "Figure")
+  tbl-title: Tabulka
+  tbl-prefix: Tabulka

@@ -1,1 +1,0 @@
-Sitemap: https://KerrisBay.github.io/stan-quarto-template/sitemap.xml
