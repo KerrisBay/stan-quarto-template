@@ -4,11 +4,12 @@ This template uses **one current analysis** with fixed filenames. It separates d
 
 ## Project workflow
 
-1.  Open `stan_quarto_template_simple.Rproj` in RStudio.
-2.  Install the required packages and CmdStan (once).
-3.  Run `R/prepare_data.R` to create `data/stan_data.rds`.
-4.  Run `fit_model.R` explicitly when you want fresh prior and posterior draws.
-5.  Render `report.qmd`. Rendering loads saved fits; it does not compile or sample.
+1.  Copy the entire folder and rename it to the `desired_name`.
+2.  Rename and open `desired_name.Rproj` in RStudio.
+3.  Install the required packages and CmdStan (once).
+4.  Run `R/prepare_data.R` to create `data/stan_data.rds`.
+5.  Run `fit_model.R` explicitly when you want fresh prior and posterior draws.
+6.  Render `report.qmd`. Rendering loads saved fits; it does not compile or sample.
 
 ## Packages
 
