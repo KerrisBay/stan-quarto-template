@@ -2,14 +2,22 @@
 
 This template uses **one current analysis** with fixed filenames. It separates data preparation, Stan source, sampling, and reporting.
 
+## How to use the template
+
+The template is set as a template in github, so...
+1. Create a new repository using this template and copy the link to this repo. 
+2. Open a folder where you want to put all the files
+3. Ctrl+Shift+RMB, open terminal here and write `git clone https://github.com/YOUR_USERNAME/THE_LINK_TO_REPOSITORY.git`
+4. Rename the *.Rproj file to match the folder name. 
+5. Change the owner if necessary `git config --global --add safe.directory D:/THE_NEWLY_CREATED_DIR`
+
+
 ## Project workflow
 
-1.  Copy the entire folder and rename it to the `desired_name`.
-2.  Rename and open `desired_name.Rproj` in RStudio.
-3.  Install the required packages and CmdStan (once).
-4.  Run `R/prepare_data.R` to create `data/stan_data.rds`.
-5.  Run `fit_model.R` explicitly when you want fresh prior and posterior draws.
-6.  Render `report.qmd`. Rendering loads saved fits; it does not compile or sample.
+1.  Install the required packages and CmdStan (once).
+2.  Run `R/prepare_data.R` to create `data/stan_data.rds`.
+3.  Run `fit_model.R` explicitly when you want fresh prior and posterior draws.
+4.  Render `report.qmd`. Rendering loads saved fits; it does not compile or sample.
 
 ## Packages
 
@@ -52,7 +60,7 @@ The fitting script saves each new RDS to a temporary file first and then replace
 
 ## Git
 
-### Initialization
+### Initialization (skip if created from the template in github)
 
 - git init
 - git add .
