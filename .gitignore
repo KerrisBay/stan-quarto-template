@@ -10,6 +10,7 @@
 .Rhistory
 .RData
 .Ruserdata
+.Rproj
 
 # Sensitive data
 data/experimental/
