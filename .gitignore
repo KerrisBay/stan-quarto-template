@@ -6,8 +6,13 @@
 *.csv
 
 # R temporary files
+.Rproj.user/
 .Rhistory
 .RData
+.Ruserdata
+
+# Sensitive data
+data/experimental/
 
 # Quarto cache
 .quarto/
@@ -16,6 +21,3 @@
 *.tmp
 *.log
 
-# Sensitive data
-data/experimental/
-.Rproj.user
