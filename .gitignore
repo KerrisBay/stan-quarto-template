@@ -1,24 +1,26 @@
-
+# Quarto
 /.quarto/
 **/*.quarto_ipynb
 
-# Stan sampling output
-*.csv
-
-# R temporary files
+# RStudio
 .Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
-.Rproj
+
+# Stan sampling output
+# Ignore CmdStan CSV output only if stored in dedicated directories
+fits/*/csv/
+fits/*/*/csv/
 
 # Sensitive data
 data/experimental/
 
-# Quarto cache
-.quarto/
-
 # Temporary files
 *.tmp
 *.log
+
+# Operating system
+.DS_Store
+Thumbs.db
 
