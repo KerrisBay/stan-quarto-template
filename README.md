@@ -7,9 +7,10 @@ This template uses **one current analysis** with fixed filenames. It separates d
 The template is set as a template in github, so...
 1. Create a new repository using this template and copy the link to this repo. 
 2. Open a folder where you want to put all the files
-3. Ctrl+Shift+RMB, open terminal here and write `git clone https://github.com/YOUR_USERNAME/THE_LINK_TO_REPOSITORY.git`
+3. Ctrl+RMB --> Open terminal here and write `git clone https://github.com/YOUR_USERNAME/THE_LINK_TO_REPOSITORY.git`
 4. Rename the *.Rproj file to match the folder name. 
-5. Change the owner if necessary `git config --global --add safe.directory D:/THE_NEWLY_CREATED_DIR`
+(5). Change the owner if necessary `git config --global --add safe.directory D:/THE_NEWLY_CREATED_DIR`
+
 
 
 ## Project workflow
